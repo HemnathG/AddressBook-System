@@ -14,6 +14,7 @@ public class AddressBookMain {
 
 		Scanner scanner = new Scanner(System.in);
 		AddressBook addressBook = new AddressBook();
+
 		System.out.println("Enter the First Name :");
 		firstName = scanner.next();
 		addressBook.setFirstName(firstName);
@@ -45,13 +46,14 @@ public class AddressBookMain {
 		System.out.println("Enter the Phone Number :");
 		phoneNumber = scanner.nextLong();
 		addressBook.setPhoneNumber(phoneNumber);
-		
+
 		scanner.close();
 
-		System.out.println("Entered First name is :" + firstName + "\n Entered Last name is :" + lastName
-				+ "\n Entered Address is :" + address + "\n Entered City is :" + city + "\n Entered State is :" + state
-				+ "\n Entered Email ID is :" + email + "\n Entered PhoneNumber is :" + phoneNumber
-				+ "\n Entered Zip Code is :" + zipcode);
+		System.out.println("Entered First name is :" + addressBook.getFirstName() + "\n Entered Last name is :"
+				+ addressBook.getLastName() + "\n Entered Address is :" + addressBook.getAddress()
+				+ "\n Entered City is :" + addressBook.getCity() + "\n Entered State is :" + addressBook.getState()
+				+ "\n Entered Email ID is :" + addressBook.getEmail() + "\n Entered PhoneNumber is :"
+				+ addressBook.getEmail() + "\n Entered Zip Code is :" + addressBook.getZipcode());
 
 	}
 }
