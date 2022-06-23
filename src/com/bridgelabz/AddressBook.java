@@ -1,36 +1,49 @@
 package com.bridgelabz;
 
-public class AddressBook {
-	
-	String firstName, lastName, address, state, city, email;
+public class AddressBook extends Contacts {
+
+	String address, state, city;
 	long phoneNumber;
 	int zipcode;
-	
-	public void setDetails() {
-		firstName = "Hemnath";
-		lastName = "Gunasekaran";
-		address = "GillNagar";
-		city = "Chennai";
-		state = "TamilNadu";
-		email = "hemnathdavid@gmail.com";
-		phoneNumber = 994324076;
-		zipcode = 600001;
-		
-	}
-	
-	public void displayDetails() {
-		System.out.println("\n First Name :" + firstName + "\n Last Name :" + lastName +
-				"\n Address :" + address +"\n City :" +city +"\n State :" + state + 
-				"\n Email ID:" +email + "\n Mobile Number :" +phoneNumber + "\n Zip Code :" +zipcode);
+
+	public String getAddress() {
+		return address;
 	}
 
-	@Override
-	public String toString() {
-		return "AddressBook [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", state="
-				+ state + ", city=" + city + ", email=" + email + ", phoneNumber=" + phoneNumber + ", zipcode="
-				+ zipcode + "]";
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	
-	
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public long getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public int getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
+	}
 
 }
