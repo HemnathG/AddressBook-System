@@ -6,54 +6,36 @@ public class AddressBookMain {
 
 	public static void main(String[] args) {
 
-		System.out.println("Welcome to AddressBook System Management");
+		System.out.println("Welcome to the Address Book System");
+        Scanner sc = new Scanner(System.in);
+        AddressBook addressBook = new AddressBook();
 
-		String firstName, lastName, address, city, state, email;
-		int zipcode;
-		long phoneNumber;
+        while (true) {
+            System.out.println("1.Adding Contact \n2.Edit Contact \n3.Exit");
+            System.out.println("Enter a Your Choice :");
+            int choice = sc.nextInt();
 
-		Scanner scanner = new Scanner(System.in);
-		AddressBook addressBook = new AddressBook();
+            switch (choice) {
+                case 1:
+                    addressBook.addContact();
+                    System.out.println("Contact Added Successfully");
+                    break;
+                    
+                case 2:
+                    addressBook.editContact();
+                    System.out.println("Contact Updated Successfully");
+                    break;
 
-		System.out.println("Enter the First Name :");
-		firstName = scanner.next();
-		addressBook.setFirstName(firstName);
+                case 3:
+                    System.out.println("you have choosen choice to exit");
+                    return;
 
-		System.out.println("Enter the Last Name :");
-		lastName = scanner.next();
-		addressBook.setLastName(lastName);
+                default:
+                    System.out.println("Please Enter Valid Choice");
 
-		System.out.println("Enter the Address :");
-		address = scanner.next();
-		addressBook.setAddress(address);
-
-		System.out.println("Enter the City :");
-		city = scanner.next();
-		addressBook.setCity(city);
-
-		System.out.println("Enter the state :");
-		state = scanner.next();
-		addressBook.setState(state);
-
-		System.out.println("Enter the Email ID :");
-		email = scanner.next();
-		addressBook.setEmail(email);
-
-		System.out.println("Enter the Zipcode :");
-		zipcode = scanner.nextInt();
-		addressBook.setZipcode(zipcode);
-
-		System.out.println("Enter the Phone Number :");
-		phoneNumber = scanner.nextLong();
-		addressBook.setPhoneNumber(phoneNumber);
-
-		scanner.close();
-
-		System.out.println("Entered First name is :" + addressBook.getFirstName() + "\n Entered Last name is :"
-				+ addressBook.getLastName() + "\n Entered Address is :" + addressBook.getAddress()
-				+ "\n Entered City is :" + addressBook.getCity() + "\n Entered State is :" + addressBook.getState()
-				+ "\n Entered Email ID is :" + addressBook.getEmail() + "\n Entered PhoneNumber is :"
-				+ addressBook.getEmail() + "\n Entered Zip Code is :" + addressBook.getZipcode());
-
+            }
+            sc.close();
+        }
 	}
+
 }
