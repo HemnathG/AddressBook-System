@@ -48,13 +48,13 @@ public class AddressBook {
 	public void displayListItems() {
 
 		for (Contacts info : list) {
-			System.out.println("First Name is :" +info.getFirstName());
-			System.out.println("Last Name is :" +info.getLastName());
-			System.out.println("Address is :" +info.getAddress());
-			System.out.println("City is :" +info.getCity());
-			System.out.println("State is :" +info.getState());
-			System.out.println("State is :" +info.getZip());
-			System.out.println("State is :" +info.getPhoneNo());
+			System.out.println("First Name is :" + info.getFirstName());
+			System.out.println("Last Name is :" + info.getLastName());
+			System.out.println("Address is :" + info.getAddress());
+			System.out.println("City is :" + info.getCity());
+			System.out.println("State is :" + info.getState());
+			System.out.println("State is :" + info.getZip());
+			System.out.println("State is :" + info.getPhoneNo());
 			System.out.println("Email is :" + info.getEmail());
 			System.out.println(" ");
 		}
@@ -67,13 +67,13 @@ public class AddressBook {
 		for (Contacts info : list) {
 			if (info.getFirstName().contains(newName)) {
 				int index = list.indexOf(info);
-				
+
 				System.out.println("Contact Information to be Edited is");
-				System.out.println(info.getFirstName() + "\n" +info.getLastName() + " \n " + info.getAddress() + " \n "
-						+ info.getCity() + " \n " + info.getState() + " \n " + info.getZip() + " \n " + info.getPhoneNo()
-						+ " \n " + info.getEmail());
+				System.out.println(info.getFirstName() + "\n" + info.getLastName() + "\n" + info.getAddress() + "\n"
+						+ info.getCity() + "\n" + info.getState() + "\n" + info.getZip() + "\n" + info.getPhoneNo()
+						+ "\n" + info.getEmail());
 				System.out.println("Enter the Contact Information to be Updated is");
-				
+
 				System.out.println("Enter the First Name:");
 				String firstname = sc.next();
 				System.out.println("Enter the Last Name:");
@@ -95,5 +95,13 @@ public class AddressBook {
 				displayListItems();
 			}
 		}
+	}
+
+	public void deleteContact() {
+		System.out.println("Enter First Name of Contact to be Deleted");
+		String newName = sc.next();
+
+		list.removeIf(info -> info.getFirstName().contains(newName));
+		displayListItems();
 	}
 }
