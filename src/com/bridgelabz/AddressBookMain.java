@@ -13,7 +13,8 @@ public class AddressBookMain {
 		while (true) {
 			System.out.println(
 					"1.Create Address Book \n2.Add New Contacts \n3.Edit Contact "
-					+ "\n4.Delete Contact \n5.Display Contacts \n6.Exit");
+					+ "\n4.Delete Contact \n5.Display Contacts \n6.Search a Contact by State or City"
+					+ "\n7.Exit");
 			System.out.println("Enter a Your Choice :");
 			int choice = sc.nextInt();
 			
@@ -46,8 +47,14 @@ public class AddressBookMain {
 				System.out.println("Contact displayed Successfully");
 				System.out.println();
 				break;
-
+			
 			case 6:
+				addressBook.search();
+				System.out.println("Contact Searched Successfully");
+				System.out.println();
+				break;
+				
+			case 7:
 				System.out.println("You have choosen to exit");
 				System.out.println();
 				return;
