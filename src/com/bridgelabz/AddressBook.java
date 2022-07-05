@@ -70,8 +70,8 @@ public class AddressBook {
 				System.out.println("Address is :" + info.getAddress());
 				System.out.println("City is :" + info.getCity());
 				System.out.println("State is :" + info.getState());
-				System.out.println("State is :" + info.getZip());
-				System.out.println("State is :" + info.getPhoneNo());
+				System.out.println("ZipCode is :" + info.getZip());
+				System.out.println("Phone Number is :" + info.getPhoneNo());
 				System.out.println("Email is :" + info.getEmail());
 				System.out.println(" ");
 			}
@@ -93,9 +93,10 @@ public class AddressBook {
 					if (Objects.equals(info.getFirstName(), newName)) {
 
 						System.out.println("Contact Information to be Edited is");
-						System.out.println(info.getFirstName() + "\n" + info.getLastName() + "\n" + info.getAddress()
-								+ "\n" + info.getCity() + "\n" + info.getState() + "\n" + info.getZip() + "\n"
-								+ info.getPhoneNo() + "\n" + info.getEmail());
+						System.out.println("First Name is :" + info.getFirstName() + "\nLast Name is :"
+								+ info.getLastName() + "\nAddress is :" + info.getAddress() + "\nCity is :"
+								+ info.getCity() + "\nState is :" + info.getState() + "\nZipCode is :" + info.getZip()
+								+ "\nPhone Number is :" + info.getPhoneNo() + "\nEmail is :" + info.getEmail());
 						System.out.println("Enter the Contact Information to be Updated is");
 
 						System.out.println("Enter the First Name:");
@@ -151,9 +152,10 @@ public class AddressBook {
 
 				for (Contacts info : map.get(name)) {
 					if (Objects.equals(info.getFirstName(), newName)) {
-						System.out.println(info.getFirstName() + "\n" + info.getLastName() + "\n" + info.getAddress()
-								+ "\n" + info.getCity() + "\n" + info.getState() + "\n" + info.getZip() + "\n"
-								+ info.getPhoneNo() + "\n" + info.getEmail());
+						System.out.println("First Name is :" + info.getFirstName() + "\nLast Name is :"
+								+ info.getLastName() + "\nAddress is :" + info.getAddress() + "\nCity is :"
+								+ info.getCity() + "\nState is :" + info.getState() + "\nZipCode is :" + info.getZip()
+								+ "\nPhone Number is :" + info.getPhoneNo() + "\nEmail is :" + info.getEmail());
 						map.get(name).remove(info);
 						isPresent = true;
 						i = 3;
@@ -184,9 +186,10 @@ public class AddressBook {
 				for (Contacts info : map.get(accountName)) {
 					if (Objects.equals(info.getFirstName(), name)) {
 						System.out.println();
-						System.out.println(info.getFirstName() + info.getLastName() + "  " + info.getAddress() + "  "
-								+ info.getCity() + "  " + info.getState() + "  " + info.getZip() + "  "
-								+ info.getPhoneNo() + "  " + info.getEmail());
+						System.out.println("First Name is :" + info.getFirstName() + "\nLast Name is :"
+								+ info.getLastName() + "\nAddress is :" + info.getAddress() + "\nCity is :"
+								+ info.getCity() + "\nState is :" + info.getState() + "\nZipCode is :" + info.getZip()
+								+ "\nPhone Number is :" + info.getPhoneNo() + "\nEmail is :" + info.getEmail());
 						System.out
 								.println("Contact already exists in Address Book, please use Edit option for editing");
 						j = 3;
@@ -221,4 +224,54 @@ public class AddressBook {
 		displayListItems();
 	}
 
+	public void search() {
+		System.out.println("\n1.Enter 1 to Search a Contact by City \n2.Enter 2 to Search a Contact by State");
+		int input = sc.nextInt();
+		switch (input) {
+		case 1: {
+			int count1 = 0;
+			System.out.println("Enter the City Name");
+			String city = sc.next();
+			for (String key : map.keySet()) {
+				for (Contacts info : map.get(key)) {
+					if (info.getCity().equals(city)) {
+						count1++;
+						System.out.println("First Name is :" + info.getFirstName() + "\nLast Name is :"
+								+ info.getLastName() + "\nAddress is :" + info.getAddress() + "\nCity is :"
+								+ info.getCity() + "\nState is :" + info.getState() + "\nZipCode is :" + info.getZip()
+								+ "\nPhone Number is :" + info.getPhoneNo() + "\nEmail is :" + info.getEmail());
+						System.out.println();
+					}
+				}
+			}
+			if (count1 == 0) {
+				System.out.println("No such Contact with city " + city + " in any of the Address Books");
+			}
+			break;
+		}
+		case 2: {
+			int count2 = 0;
+			System.out.println("Enter the State Name");
+			String state = sc.next();
+			for (String key : map.keySet()) {
+				for (Contacts info : map.get(key)) {
+					if (info.getState().equals(state)) {
+						count2++;
+						System.out.println("First Name is :" + info.getFirstName() + "\nLast Name is :"
+								+ info.getLastName() + "\nAddress is :" + info.getAddress() + "\nCity is :"
+								+ info.getCity() + "\nState is :" + info.getState() + "\nZipCode is :" + info.getZip()
+								+ "\nPhone Number is :" + info.getPhoneNo() + "\nEmail is :" + info.getEmail());
+						System.out.println();
+					}
+				}
+			}
+			if (count2 == 0) {
+				System.out.println("No such Contact with state " + state + " in any of the Address Books");
+			}
+			break;
+		}
+		default:
+
+		}
+	}
 }
