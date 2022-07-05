@@ -11,7 +11,7 @@ public class AddressBookMain {
 		AddressBook addressBook = new AddressBook();
 
 		while (true) {
-			System.out.println("1.Adding Contact \n2.Edit Contact \n3.Delete Contact \n4.Exit");
+			System.out.println("1.Adding Contact \n2.Edit Contact \n3.Delete Contact \n4.Display Contacts \n5.Exit");
 			System.out.println("Enter a Your Choice :");
 			int choice = sc.nextInt();
 
@@ -30,9 +30,14 @@ public class AddressBookMain {
 				addressBook.deleteContact();
 				System.out.println("Contact deleted Successfully");
 				break;
-
+				
 			case 4:
-				System.out.println("you have choosen choice to exit");
+				addressBook.displayListItems();
+				System.out.println("Contact displayed Successfully");
+				break;	
+
+			case 5:
+				System.out.println("You have choosen to exit");
 				return;
 
 			default:
