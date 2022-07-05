@@ -11,37 +11,50 @@ public class AddressBookMain {
 		AddressBook addressBook = new AddressBook();
 
 		while (true) {
-			System.out.println("1.Adding Contact \n2.Edit Contact \n3.Delete Contact \n4.Display Contacts \n5.Exit");
+			System.out.println(
+					"1.Create Address Book \n2.Add New Contacts \n3.Edit Contact "
+					+ "\n4.Delete Contact \n5.Display Contacts \n6.Exit");
 			System.out.println("Enter a Your Choice :");
 			int choice = sc.nextInt();
-
+			
 			switch (choice) {
 			case 1:
 				addressBook.addContact();
 				System.out.println("Contact Added Successfully");
+				System.out.println();
 				break;
-
 			case 2:
-				addressBook.editContact();
-				System.out.println("Contact Updated Successfully");
+				addressBook.addNew();
+				System.out.println("Contact Added Successfully");
+				System.out.println();
 				break;
 
 			case 3:
+				addressBook.editContact();
+				System.out.println("Contact Updated Successfully");
+				System.out.println();
+				break;
+
+			case 4:
 				addressBook.deleteContact();
 				System.out.println("Contact deleted Successfully");
+				System.out.println();
 				break;
-				
-			case 4:
-				addressBook.displayListItems();
-				System.out.println("Contact displayed Successfully");
-				break;	
 
 			case 5:
+				addressBook.displayListItems();
+				System.out.println("Contact displayed Successfully");
+				System.out.println();
+				break;
+
+			case 6:
 				System.out.println("You have choosen to exit");
+				System.out.println();
 				return;
 
 			default:
 				System.out.println("Please Enter Valid Choice");
+				System.out.println();
 
 			}
 		}
